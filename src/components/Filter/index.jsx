@@ -1,9 +1,7 @@
 import React from "react";
-// import PropTypes from "prop-types";
 import styled from "styled-components";
 import CurrencyButtonGroup from "../CurrencyButtonGroup";
 import CheckboxGroup from "../CheckboxGroup";
-// import Tab from "../Tab";
 import { device } from "../mediaQueries";
 
 const StyledFilter = styled.div`
@@ -63,10 +61,5 @@ const Filter = () => {
     </StyledFilter>
   );
 };
-
-// Filter.propTypes = {
-//   currentCurrency: PropTypes.func.isRequired,
-//   stops: PropTypes.func.isRequired
-// };
 
 export default Filter;

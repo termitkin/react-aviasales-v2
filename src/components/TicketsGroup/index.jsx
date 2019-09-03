@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-// import PropTypes from "prop-types";
+import React from "react";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { itemsFetchData } from "../../store/tickets/action";
 import Ticket from "../Ticket";
@@ -7,8 +7,6 @@ import Message from "../Message";
 import TicketPlaceholder from "../TicketPlaceholder";
 
 const TicketsGroup = props => {
-  console.log("lalala", props);
-
   if (props.tickets.tickets.length === 0 && props.isLoading === false) {
     props.fetchData("https://front-test.beta.aviasales.ru/search");
   }
@@ -86,3 +84,13 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(TicketsGroup);
+
+TicketsGroup.propTypes = {
+  checkboxes: PropTypes.object.isRequired,
+  tickets: PropTypes.object.isRequired,
+  currentCurrency: PropTypes.string.isRequired,
+  fetchData: PropTypes.func.isRequired,
+  hasErrored: PropTypes.bool.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+  sortBy: PropTypes.string.isRequired
+};

@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 
 export const Tab = props => {
@@ -49,3 +49,11 @@ export const Tab = props => {
 };
 
 export default Tab;
+
+Tab.propTypes = {
+  sortBy: PropTypes.string.isRequired,
+  currentSortBy: PropTypes.string.isRequired,
+  changeFasterOrCheaper: PropTypes.func.isRequired,
+  borderRadius: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
+};

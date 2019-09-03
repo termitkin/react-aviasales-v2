@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { device } from "../mediaQueries";
 import { duration } from "./duration";
@@ -237,3 +237,8 @@ const Ticket = props => {
 };
 
 export default Ticket;
+
+Ticket.propTypes = {
+  ticket: PropTypes.array.isRequired,
+  currentCurrency: PropTypes.string.isRequired
+};

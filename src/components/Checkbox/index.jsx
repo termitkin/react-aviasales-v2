@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { device } from "../mediaQueries";
 import checkBoxIcon from "./check.svg";
@@ -130,3 +130,11 @@ const Checkbox = props => {
 };
 
 export default Checkbox;
+
+Checkbox.propTypes = {
+  changeStops: PropTypes.func.isRequired,
+  stops: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  id: PropTypes.number.isRequired,
+  isEnabled: PropTypes.bool.isRequired,
+  labelText: PropTypes.string.isRequired
+};

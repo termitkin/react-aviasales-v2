@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
 import { device } from "../mediaQueries";
 
@@ -57,3 +57,11 @@ const CurrencyButton = props => {
 };
 
 export default CurrencyButton;
+
+CurrencyButton.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
+  borderRadius: PropTypes.string,
+  changeCurrency: PropTypes.func.isRequired,
+  currency: PropTypes.string.isRequired,
+  currentCurrency: PropTypes.string.isRequired
+};

@@ -1,7 +1,6 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import styled from "styled-components";
-// import { device } from "../mediaQueries";
 import Tab from "../Tab";
 import { connect } from "react-redux";
 
@@ -49,3 +48,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(TabsGroup);
+
+TabsGroup.propTypes = {
+  sortBy: PropTypes.string.isRequired,
+  changeFasterOrCheaper: PropTypes.func.isRequired
+};

@@ -1,6 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
-// import styled from "styled-components";
+import PropTypes from "prop-types";
 import Checkbox from "../Checkbox";
 import { changeStops } from "../../store/stops/actions";
 import { connect } from "react-redux";
@@ -18,7 +17,6 @@ const CheckboxGroup = props => {
         key={el.id}
         id={el.id}
         labelText={el.labelText}
-        state={el.isEnabled}
         stops={el.stops}
         isEnabled={el.isEnabled}
         changeStops={props.changeStops}
@@ -42,3 +40,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CheckboxGroup);
+
+CheckboxGroup.propTypes = {
+  changeStops: PropTypes.func.isRequired,
+  stops: PropTypes.object.isRequired
+};

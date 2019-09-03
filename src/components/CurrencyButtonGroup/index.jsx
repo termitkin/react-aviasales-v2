@@ -1,5 +1,5 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import styled from "styled-components";
 import CurrencyButton from "../CurrencyButton";
@@ -65,3 +65,8 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(CurrencyButtonGroup);
+
+CurrencyButtonGroup.propTypes = {
+  currentCurrency: PropTypes.string.isRequired,
+  changeCurrency: PropTypes.func.isRequired
+};
