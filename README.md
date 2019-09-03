@@ -2,7 +2,11 @@
 
 **Здесь использовалось**
 
-bem, css3, html5, js, react(create-react-app), json
+html5, react(create-react-app), redux, css-in-js(styles-components)
+
+Билеты загружаются с серверов aviasales.
+Курсы валют загружаются с api.ratesapi.io.
+
 
 Страничка нормально выглядит на мобильных
 
