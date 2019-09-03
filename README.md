@@ -5,7 +5,7 @@
 html5, react(create-react-app), redux, css-in-js(styled-components)
 
 Билеты загружаются с серверов aviasales.
-Курсы валют загружаются с api.ratesapi.io.
+Курсы доллара и евро с api.ratesapi.io.
 
 
 Страничка нормально выглядит на мобильных
