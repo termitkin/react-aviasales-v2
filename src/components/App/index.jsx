@@ -7,6 +7,7 @@ import TicketsGroup from "../TicketsGroup";
 import { device } from "../mediaQueries";
 
 const StyledApp = styled.div`
+  padding: 1px;
   min-height: 100%;
   background-color: #f3f7fa;
 `;
