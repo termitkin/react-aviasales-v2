@@ -197,7 +197,8 @@ const Ticket = props => {
               <source
                 srcSet={`https://pics.avs.io/99/36/${el.carrier}@2x.png`}
                 type="image/png"
-                media="screen, min-device-pixel-ratio: 1.25, min-resolution: 200dpi, min-resolution: 1.25dppx"
+                media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution:
+          200dpi), screen and ( min-resolution: 1.25dppx)"
               ></source>
               <StyledLogo
                 src={`https://pics.avs.io/99/36/${el.carrier}.png`}
@@ -221,7 +222,6 @@ const Ticket = props => {
               {[...el.segments[0].stops].join(", ")}
             </StyledContent>
           </StyledSegment>
-
           <StyledSegment>
             <StyledMeta>{`${el.segments[1].origin} – ${el.segments[1].destination}`}</StyledMeta>
             <StyledContent>
