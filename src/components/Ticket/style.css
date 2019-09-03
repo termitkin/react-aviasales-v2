@@ -1,0 +1,12 @@
+.no-tickets-message {
+  color: #333;
+  text-align: center;
+}
+
+.no-tickets-message_show_true {
+  display: block;
+}
+
+.no-tickets-message_show_false {
+  display: none;
+}
