@@ -93,7 +93,7 @@ const StyledPriceAndLogo = styled.div`
   align-items: center;
 `;
 
-const StyledLogoWrap = styled.div`
+const StyledLogoWrap = styled.picture`
   width: 140px;
   height: 36px;
   display: flex;
@@ -194,6 +194,11 @@ const Ticket = props => {
               )}
             </StyledPrice>
             <StyledLogoWrap>
+              <source
+                srcSet={`https://pics.avs.io/99/36/${el.carrier}@2x.png`}
+                type="image/png"
+                media="screen and min-device-pixel-ratio: 1.25, min-resolution: 200dpi, min-resolution: 1.25dppx"
+              ></source>
               <StyledLogo
                 src={`https://pics.avs.io/99/36/${el.carrier}.png`}
                 alt="Логотип авиакомпании"
