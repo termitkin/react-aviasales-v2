@@ -195,7 +195,7 @@ const Ticket = props => {
             </StyledPrice>
             <StyledLogoWrap>
               <StyledLogo
-                src={`http://pics.avs.io/99/36/${el.carrier}.png`}
+                src={`https://pics.avs.io/99/36/${el.carrier}.png`}
                 alt="Логотип авиакомпании"
               />
             </StyledLogoWrap>
