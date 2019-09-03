@@ -43,5 +43,6 @@
     "lint-staged": "^9.2.1",
     "prettier": "^1.18.2",
     "prop-types": "^15.7.2"
-  }
+  },
+  "homepage": "https://termitkin.github.io/react-aviasales-v2"
 }
