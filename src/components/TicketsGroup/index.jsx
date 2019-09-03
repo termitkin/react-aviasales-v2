@@ -2,13 +2,22 @@ import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { itemsFetchData } from "../../store/tickets/action";
+import { fetchCurrentRates } from "../../store/currencyRates/actions";
 import Ticket from "../Ticket";
 import Message from "../Message";
 import TicketPlaceholder from "../TicketPlaceholder";
 
 const TicketsGroup = props => {
-  if (props.tickets.tickets.length === 0 && props.isLoading === false) {
-    props.fetchData("https://front-test.beta.aviasales.ru/search");
+  if (props.tickets.tickets.length === 0 && props.ticketsIsLoading === false) {
+    props.fetchTickets("https://front-test.beta.aviasales.ru/search");
+  }
+
+  if (
+    props.currencyRates.currencyRates.usd === "" &&
+    props.currencyRates.currencyRates.eur === "" &&
+    props.currencyRatesIsLoading === false
+  ) {
+    props.fetchCurrentRates();
   }
 
   let tickets = props.tickets.tickets;
@@ -49,9 +58,9 @@ const TicketsGroup = props => {
 
   tickets = tickets.slice(0, 5);
 
-  if (props.hasErrored === true) {
+  if (props.ticketsHasErrored === true || props.currencyRatesHasErrored) {
     return <Message text="Произошла ошибка =( Обновите страницу!" />;
-  } else if (props.isLoading === true) {
+  } else if (props.ticketsIsLoading === true) {
     return <TicketPlaceholder />;
   } else if (tickets.length === 0) {
     return (
@@ -60,7 +69,13 @@ const TicketsGroup = props => {
       />
     );
   }
-  return <Ticket ticket={tickets} currentCurrency={props.currentCurrency} />;
+  return (
+    <Ticket
+      ticket={tickets}
+      currentCurrency={props.currentCurrency}
+      currencyRates={props.currencyRates.currencyRates}
+    />
+  );
 };
 
 const mapStateToProps = state => {
@@ -69,14 +84,18 @@ const mapStateToProps = state => {
     sortBy: state.fastesOrCheaper.sortBy,
     currentCurrency: state.currency.currentCurrency,
     tickets: state.tickets,
-    isLoading: state.itemsIsLoading,
-    hasErrored: state.itemsHasErrored
+    ticketsIsLoading: state.ticketsIsLoading,
+    ticketsHasErrored: state.ticketsHasErrored,
+    currencyRates: state.currencyRates,
+    currencyRatesHasErrored: state.currencyRatesHasErrored,
+    currencyRatesIsLoading: state.currencyRatesIsLoading
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchData: url => dispatch(itemsFetchData(url))
+    fetchCurrentRates: () => dispatch(fetchCurrentRates()),
+    fetchTickets: url => dispatch(itemsFetchData(url))
   };
 };
 
@@ -89,8 +108,11 @@ TicketsGroup.propTypes = {
   checkboxes: PropTypes.object.isRequired,
   tickets: PropTypes.object.isRequired,
   currentCurrency: PropTypes.string.isRequired,
-  fetchData: PropTypes.func.isRequired,
-  hasErrored: PropTypes.bool.isRequired,
-  isLoading: PropTypes.bool.isRequired,
+  fetchTickets: PropTypes.func.isRequired,
+  ticketsHasErrored: PropTypes.bool.isRequired,
+  ticketsIsLoading: PropTypes.bool.isRequired,
+  currencyRates: PropTypes.object.isRequired,
+  currencyRatesHasErrored: PropTypes.bool.isRequired,
+  currencyRatesIsLoading: PropTypes.bool.isRequired,
   sortBy: PropTypes.string.isRequired
 };

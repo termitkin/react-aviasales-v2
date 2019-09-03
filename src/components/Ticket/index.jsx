@@ -187,7 +187,11 @@ const Ticket = props => {
         <StyledTicket>
           <StyledPriceAndLogo>
             <StyledPrice>
-              {priceConverter(el.price, props.currentCurrency)}
+              {priceConverter(
+                el.price,
+                props.currentCurrency,
+                props.currencyRates
+              )}
             </StyledPrice>
             <StyledLogoWrap>
               <StyledLogo
@@ -240,5 +244,6 @@ export default Ticket;
 
 Ticket.propTypes = {
   ticket: PropTypes.array.isRequired,
-  currentCurrency: PropTypes.string.isRequired
+  currentCurrency: PropTypes.string.isRequired,
+  currencyRates: PropTypes.object.isRequired
 };

@@ -1,38 +1,38 @@
-import { ITEMS_HAS_ERRORED } from "../../constants";
-import { ITEMS_IS_LOADING } from "../../constants";
-import { ITEMS_FETCH_DATA_SUCCESS } from "../../constants";
+import { ACTION_TICKETS_HAS_ERRORED } from "../../constants";
+import { ACTION_TICKETS_IS_LOADING } from "../../constants";
+import { ACTION_TICKETS_FETCH_DATA_SUCCESS } from "../../constants";
 import axios from "axios";
 
-export function itemsHasErrored(bool) {
+export function ticketsHasErrored(bool) {
   return {
-    type: ITEMS_HAS_ERRORED,
-    hasErrored: bool
+    type: ACTION_TICKETS_HAS_ERRORED,
+    ticketsHasErrored: bool
   };
 }
 
-export function itemsIsLoading(bool) {
+export function ticketsIsLoading(bool) {
   return {
-    type: ITEMS_IS_LOADING,
-    isLoading: bool
+    type: ACTION_TICKETS_IS_LOADING,
+    ticketsIsLoading: bool
   };
 }
 
 export function itemsFetchDataSuccess(tickets) {
   return {
-    type: ITEMS_FETCH_DATA_SUCCESS,
+    type: ACTION_TICKETS_FETCH_DATA_SUCCESS,
     tickets
   };
 }
 
 export function itemsFetchData(url) {
   return dispatch => {
-    dispatch(itemsIsLoading(true));
+    dispatch(ticketsIsLoading(true));
 
     const getId = url => {
       return axios
         .get(url)
         .then(response => response.data.searchId)
-        .catch(() => dispatch(itemsHasErrored(true)));
+        .catch(() => dispatch(ticketsHasErrored(true)));
     };
 
     const getTickets = (sID, result) => {
@@ -55,7 +55,7 @@ export function itemsFetchData(url) {
           if (error.response.status === 500) {
             return getTickets(sID, result);
           } else {
-            dispatch(itemsHasErrored(true));
+            dispatch(ticketsHasErrored(true));
           }
         });
     };
@@ -68,7 +68,7 @@ export function itemsFetchData(url) {
             tickets: result
           })
         );
-        dispatch(itemsIsLoading(false));
+        dispatch(ticketsIsLoading(false));
       });
     });
   };
