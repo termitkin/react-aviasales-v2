@@ -197,7 +197,7 @@ const Ticket = props => {
               <source
                 srcSet={`https://pics.avs.io/99/36/${el.carrier}@2x.png`}
                 type="image/png"
-                media="screen and min-device-pixel-ratio: 1.25, min-resolution: 200dpi, min-resolution: 1.25dppx"
+                media="screen, min-device-pixel-ratio: 1.25, min-resolution: 200dpi, min-resolution: 1.25dppx"
               ></source>
               <StyledLogo
                 src={`https://pics.avs.io/99/36/${el.carrier}.png`}
