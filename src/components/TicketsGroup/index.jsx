@@ -21,42 +21,45 @@ const TicketsGroup = props => {
   }
 
   let tickets = props.tickets.tickets;
-  let currentStops = [];
 
-  for (let i in props.checkboxes) {
+  if (props.tickets.tickets.length !== 8) {
+    let currentStops = [];
+
     if (props.checkboxes.checkbox0.isEnabled === true) {
       currentStops = "all";
-      break;
-    } else if (props.checkboxes[i].isEnabled === true) {
-      currentStops.push(props.checkboxes[i].stops);
+    } else {
+      for (let i in props.checkboxes) {
+        if (props.checkboxes[i].isEnabled === true) {
+          currentStops.push(props.checkboxes[i].stops);
+        }
+      }
     }
-  }
+    if (currentStops !== "all") {
+      tickets = tickets.filter(el => {
+        return currentStops.some(
+          elem =>
+            elem === el.segments[0].stops.length &&
+            elem === el.segments[1].stops.length
+        );
+      });
+    }
 
-  if (currentStops !== "all") {
-    tickets = tickets.filter(el => {
-      return currentStops.some(
-        elem =>
-          elem === el.segments[0].stops.length &&
-          elem === el.segments[1].stops.length
-      );
-    });
-  }
+    if (props.sortBy === "cheaper") {
+      tickets.sort((a, b) => {
+        return a.price - b.price;
+      });
+    } else {
+      tickets.sort((a, b) => {
+        return (
+          a.segments[0].duration +
+          a.segments[1].duration -
+          (b.segments[0].duration + b.segments[1].duration)
+        );
+      });
+    }
 
-  if (props.sortBy === "cheaper") {
-    tickets.sort((a, b) => {
-      return a.price - b.price;
-    });
-  } else {
-    tickets.sort((a, b) => {
-      return (
-        a.segments[0].duration +
-        a.segments[1].duration -
-        (b.segments[0].duration + b.segments[1].duration)
-      );
-    });
+    tickets = tickets.slice(0, 5);
   }
-
-  tickets = tickets.slice(0, 5);
 
   if (props.ticketsHasErrored === true || props.currencyRatesHasErrored) {
     return <Message text="Произошла ошибка =( Обновите страницу!" />;

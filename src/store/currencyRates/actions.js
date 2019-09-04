@@ -48,7 +48,7 @@ export function fetchCurrentRates() {
             }
           })
         );
-        currencyRatesIsLoading(false);
+        dispatch(currencyRatesIsLoading(false));
       })
     );
   };

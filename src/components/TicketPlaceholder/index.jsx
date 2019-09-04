@@ -1,7 +1,7 @@
 import React from "react";
-import Styled from "styled-components";
+import styled from "@emotion/styled/macro";
 
-const StyledPlaceholder = Styled.div`
+const StyledPlaceholder = styled.div`
   width: 100%;
   max-width: 500px;
   height: 184px;
@@ -12,7 +12,7 @@ const StyledPlaceholder = Styled.div`
   align-items: center;
 `;
 
-const StyledText = Styled.span`
+const StyledText = styled.span`
   font-size; 16px;
   color: #333;
   font-family: sans-serif;

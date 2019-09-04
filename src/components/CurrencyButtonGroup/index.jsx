@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import styled from "styled-components";
+import styled from "@emotion/styled/macro";
 import CurrencyButton from "../CurrencyButton";
 import { device } from "../mediaQueries";
 import { changeCurrency } from "../../store/currency/actions";
