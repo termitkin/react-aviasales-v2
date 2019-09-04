@@ -2,7 +2,7 @@
 
 **Здесь использовалось**
 
-html5, react(create-react-app), redux, css-in-js(styled-components)
+html5, react(create-react-app), redux, css-in-js(emotion)
 
 Билеты загружаются с серверов aviasales.
 Курсы доллара и евро с api.ratesapi.io.
