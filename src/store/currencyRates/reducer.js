@@ -9,7 +9,7 @@ const initialState = {
   }
 };
 
-export function currencyRatesHasErrored(state = false, action) {
+export const currencyRatesHasErrored = (state = false, action) => {
   switch (action.type) {
     case ACTION_CURRENCY_RATES_HAS_ERRORED:
       return action.currencyRatesHasErrored;
@@ -17,9 +17,9 @@ export function currencyRatesHasErrored(state = false, action) {
     default:
       return state;
   }
-}
+};
 
-export function currencyRatesIsLoading(state = false, action) {
+export const currencyRatesIsLoading = (state = false, action) => {
   switch (action.type) {
     case ACTION_CURRENCY_RATES_IS_LOADING:
       return action.currencyRatesIsLoading;
@@ -27,9 +27,9 @@ export function currencyRatesIsLoading(state = false, action) {
     default:
       return state;
   }
-}
+};
 
-export function currencyRates(state = initialState, action) {
+export const currencyRates = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_CURRENCY_RATES_FETCH_DATA_SUCCESS:
       return action.currencyRates;
@@ -37,4 +37,4 @@ export function currencyRates(state = initialState, action) {
     default:
       return state;
   }
-}
+};

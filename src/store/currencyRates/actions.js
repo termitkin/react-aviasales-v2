@@ -3,28 +3,28 @@ import { ACTION_CURRENCY_RATES_IS_LOADING } from "../../constants";
 import { ACTION_CURRENCY_RATES_FETCH_DATA_SUCCESS } from "../../constants";
 import axios from "axios";
 
-export function currencyRatesHasErrored(bool) {
+export const currencyRatesHasErrored = bool => {
   return {
     type: ACTION_CURRENCY_RATES_HAS_ERRORED,
     currencyRatesHasErrored: bool
   };
-}
+};
 
-export function currencyRatesIsLoading(bool) {
+export const currencyRatesIsLoading = bool => {
   return {
     type: ACTION_CURRENCY_RATES_IS_LOADING,
     currencyRatesIsLoading: bool
   };
-}
+};
 
-export function itemsFetchDataSuccess(currencyRates) {
+export const itemsFetchDataSuccess = currencyRates => {
   return {
     type: ACTION_CURRENCY_RATES_FETCH_DATA_SUCCESS,
     currencyRates
   };
-}
+};
 
-export function fetchCurrentRates() {
+export const fetchCurrentRates = () => {
   return dispatch => {
     dispatch(currencyRatesIsLoading(true));
 
@@ -52,4 +52,4 @@ export function fetchCurrentRates() {
       })
     );
   };
-}
+};
