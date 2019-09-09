@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled/macro";
-import CurrencyButtonGroup from "../CurrencyButtonGroup";
-import CheckboxGroup from "../CheckboxGroup";
+import CurrencyButtonContainer from "../CurrencyButtonContainer";
+import CheckboxContainer from "../CheckboxContainer";
 import { device } from "../mediaQueries";
 
 const StyledFilter = styled.div`
@@ -51,12 +51,12 @@ const Filter = () => {
     <StyledFilter>
       <StyledControlsWrap>
         <StyledTitle>Валюта</StyledTitle>
-        <CurrencyButtonGroup />
+        <CurrencyButtonContainer />
       </StyledControlsWrap>
 
       <StyledControlsWrap>
         <StyledTitle>Количество пересадок</StyledTitle>
-        <CheckboxGroup />
+        <CheckboxContainer />
       </StyledControlsWrap>
     </StyledFilter>
   );

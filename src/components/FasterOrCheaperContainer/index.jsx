@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled/macro";
-import Tab from "../Tab";
+import FasterOrCheaperButton from "../FasterOrCheaperButton";
 import { connect } from "react-redux";
 
 import { changeFasterOrCheaper } from "../../store/fastesOrCheaper/actions";
@@ -16,14 +16,14 @@ const StyledTabsWrapper = styled.div`
 const TabsGroup = props => {
   return (
     <StyledTabsWrapper>
-      <Tab
+      <FasterOrCheaperButton
         text="Самый дешевый"
         borderRadius="5px 0px 0px 5px"
         sortBy="cheaper"
         currentSortBy={props.sortBy}
         changeFasterOrCheaper={props.changeFasterOrCheaper}
       />
-      <Tab
+      <FasterOrCheaperButton
         text="Самый быстрый"
         borderRadius="0px 5px 5px 0px"
         sortBy="fastes"

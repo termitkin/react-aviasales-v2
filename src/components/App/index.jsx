@@ -2,8 +2,8 @@ import React from "react";
 import styled from "@emotion/styled/macro";
 import Logo from "../Logo";
 import Filter from "../Filter";
-import TabsGroup from "../TabsGroup";
-import TicketsGroup from "../TicketsGroup";
+import FasterOrCheaperContainer from "../FasterOrCheaperContainer";
+import TicketsContainer from "../TicketsContainer";
 import { device } from "../mediaQueries";
 
 const StyledApp = styled.div`
@@ -41,8 +41,8 @@ const App = () => {
       <StyledWrapper>
         <Filter />
         <StyledRightColumn>
-          <TabsGroup />
-          <TicketsGroup />
+          <FasterOrCheaperContainer />
+          <TicketsContainer />
         </StyledRightColumn>
       </StyledWrapper>
     </StyledApp>
