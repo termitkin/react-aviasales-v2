@@ -10,6 +10,7 @@ const StyledApp = styled.div`
   padding: 1px;
   min-height: 100%;
   background-color: #f3f7fa;
+  box-sizing: border-box;
 `;
 
 const StyledWrapper = styled.div`

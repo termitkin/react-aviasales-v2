@@ -17,6 +17,7 @@ const StyledCurrencyButton = styled(CurrencyButton)`
   display: flex;
   padding: 10px 15px 15px;
   box-sizing: border-box;
+  position: relative;
 
   @media ${device.desktop} {
     height: 40px;

@@ -5,13 +5,15 @@ import { itemsFetchData } from "../../store/tickets/action";
 import { fetchCurrentRates } from "../../store/currencyRates/actions";
 import Ticket from "../Ticket";
 import Message from "../Message";
-import TicketPlaceholder from "../TicketPlaceholder";
+import TicketsPlaceholder from "../TicketsPlaceholder";
 
 const TicketsGroup = props => {
+  // Fetch tickets
   if (props.tickets.tickets.length === 0 && props.ticketsIsLoading === false) {
     props.fetchTickets("https://front-test.beta.aviasales.ru/search");
   }
 
+  // Fetch current currency rates
   if (
     props.currencyRates.currencyRates.usd === "" &&
     props.currencyRates.currencyRates.eur === "" &&
@@ -20,51 +22,51 @@ const TicketsGroup = props => {
     props.fetchCurrentRates();
   }
 
-  let tickets = props.tickets.tickets;
+  let tickets = props.tickets.tickets.slice();
+  let currentStops = [];
 
-  if (props.tickets.tickets.length !== 8) {
-    let currentStops = [];
-
-    if (props.checkboxes.checkbox0.isEnabled === true) {
-      currentStops = "all";
-    } else {
-      for (let i in props.checkboxes) {
-        if (props.checkboxes[i].isEnabled === true) {
-          currentStops.push(props.checkboxes[i].stops);
-        }
+  if (props.checkboxes.checkbox0.isEnabled === true) {
+    currentStops = "all";
+  } else {
+    for (let i in props.checkboxes) {
+      if (props.checkboxes[i].isEnabled === true) {
+        currentStops.push(props.checkboxes[i].stops);
       }
     }
-    if (currentStops !== "all") {
-      tickets = tickets.filter(el => {
-        return currentStops.some(
-          elem =>
-            elem === el.segments[0].stops.length &&
-            elem === el.segments[1].stops.length
-        );
-      });
-    }
-
-    if (props.sortBy === "cheaper") {
-      tickets.sort((a, b) => {
-        return a.price - b.price;
-      });
-    } else {
-      tickets.sort((a, b) => {
-        return (
-          a.segments[0].duration +
-          a.segments[1].duration -
-          (b.segments[0].duration + b.segments[1].duration)
-        );
-      });
-    }
-
-    tickets = tickets.slice(0, 5);
   }
+
+  // sorting tickets by stops
+  if (currentStops !== "all") {
+    tickets = tickets.filter(el => {
+      return currentStops.some(
+        elem =>
+          elem === el.segments[0].stops.length &&
+          elem === el.segments[1].stops.length
+      );
+    });
+  }
+
+  // sorting tickets by cheaper or faster
+  if (props.sortBy === "cheaper") {
+    tickets.sort((a, b) => {
+      return a.price - b.price;
+    });
+  } else {
+    tickets.sort((a, b) => {
+      return (
+        a.segments[0].duration +
+        a.segments[1].duration -
+        (b.segments[0].duration + b.segments[1].duration)
+      );
+    });
+  }
+
+  tickets = tickets.slice(0, 5);
 
   if (props.ticketsHasErrored === true || props.currencyRatesHasErrored) {
     return <Message text="Произошла ошибка =( Обновите страницу!" />;
   } else if (props.ticketsIsLoading === true) {
-    return <TicketPlaceholder />;
+    return <TicketsPlaceholder />;
   } else if (tickets.length === 0) {
     return (
       <Message

@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "@emotion/styled/macro";
-import { device } from "../mediaQueries";
 
 const CurrencyButton = props => {
   const StyledButton = styled.button`
@@ -24,16 +23,18 @@ const CurrencyButton = props => {
     transition: color, background-color, border 0.15s;
     border-radius: ${props.borderRadius || "0 0 0 0"};
 
-    @media ${device.desktop} {
-      width: 68px;
+    &:nth-child(2),
+    &:nth-child(3) {
+      margin-left: -1px;
     }
 
     &:hover {
       background-color: ${props.currency === props.currentCurrency
         ? "#2196f3"
-        : "#fff"};
+        : "#e5f9ff"};
 
       border: 1px solid #64b5f5;
+      z-index: 1;
     }
 
     &:focus {
@@ -43,6 +44,7 @@ const CurrencyButton = props => {
       border: ${props.currency === props.currentCurrency
         ? "1px solid #64b5f5"
         : "3px solid #64b5f5"};
+      z-index: 1;
     }
   `;
   const handleClick = () => {

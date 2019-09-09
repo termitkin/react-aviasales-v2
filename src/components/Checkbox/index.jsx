@@ -64,6 +64,11 @@ const StyledOnlyButton = styled.button`
   display: none;
   cursor: pointer;
   padding: 0;
+
+  &:hover,
+  &:focus {
+    color: #ff9d1b;
+  }
 `;
 
 const StyledCheckboxWrap = styled.div`
