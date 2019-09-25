@@ -49,7 +49,7 @@ const StyledCheckbox = styled.input`
   }
 `;
 
-const StyledOnlyButton = styled.button`
+export const StyledOnlyButton = styled.button`
   width: 49px;
   background-color: transparent;
   border: none;

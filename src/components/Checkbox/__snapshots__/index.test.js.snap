@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox component Matches the snapshot 1`] = `
+.emotion-6 {
+  width: 290px;
+  height: 36px;
+  padding: 0 15px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  box-sizing: border-box;
+  outline: none;
+}
+
+@media (min-width:960px) {
+  .emotion-6 {
+    width: 232px;
+  }
+}
+
+.emotion-6:hover {
+  background-color: #f1fcff;
+}
+
+.emotion-6:hover .emotion-5 {
+  display: table-cell;
+  background-color: #f1fcff;
+}
+
+.emotion-0 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  -webkit-clip: rect(0 0 0 0);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.emotion-0:checked + .emotion-3::before {
+  border: 1px solid #2196f3;
+  background-image: url(check.svg);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.emotion-0:focus + .emotion-3::before {
+  border: 3px solid #2196f3;
+}
+
+.emotion-2 {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  cursor: pointer;
+  font-family: Open Sans,sans-serif;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 35px;
+  color: #4a4a4a;
+}
+
+.emotion-2::before {
+  content: "";
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  border: 1px solid #d2d5d6;
+  border-radius: 3px;
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.emotion-4 {
+  width: 49px;
+  background-color: transparent;
+  border: none;
+  margin-left: auto;
+  font-family: Open Sans,sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 35px;
+  -webkit-letter-spacing: 0.5px;
+  -moz-letter-spacing: 0.5px;
+  -ms-letter-spacing: 0.5px;
+  letter-spacing: 0.5px;
+  color: #2196f3;
+  text-transform: uppercase;
+  display: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.emotion-4:hover,
+.emotion-4:focus {
+  color: #ff9d1b;
+}
+
+<div
+  className="emotion-6 emotion-7"
+  tabIndex="-1"
+>
+  <input
+    checked={true}
+    className="emotion-0 emotion-1"
+    id="checkbox1"
+    onChange={[Function]}
+    type="checkbox"
+  />
+  <label
+    className="emotion-2 emotion-3"
+    htmlFor="checkbox1"
+  >
+    1 пересадка
+  </label>
+  <button
+    className="emotion-4 emotion-5"
+    onClick={[Function]}
+  >
+    только
+  </button>
+</div>
+`;
