@@ -23,8 +23,8 @@ const CurrencyButton = props => {
     transition: color, background-color, border 0.15s;
     border-radius: ${props.borderRadius || "0 0 0 0"};
 
-    &:nth-child(2),
-    &:nth-child(3) {
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
       margin-left: -1px;
     }
 
