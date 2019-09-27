@@ -97,14 +97,14 @@ const StyledCheckboxWrap = styled.div`
 const Checkbox = props => {
   const handleClickOnCheckbox = () => {
     return props.changeStops({
-      clickedButton: "checkbox" + props.id,
+      currentClickedCheckbox: "checkbox" + props.id,
       only: false
     });
   };
 
   const handleClickOnOnlyButton = () => {
     return props.changeStops({
-      clickedButton: "checkbox" + props.id,
+      currentClickedCheckbox: "checkbox" + props.id,
       only: true
     });
   };

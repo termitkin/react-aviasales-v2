@@ -28,7 +28,7 @@ const CheckboxGroup = props => {
 
 const mapStateToProps = state => {
   return {
-    stops: state.stops.checkboxes
+    stops: state.stops
   };
 };
 

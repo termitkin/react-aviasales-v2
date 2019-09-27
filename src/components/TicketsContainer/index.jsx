@@ -85,7 +85,7 @@ const TicketsGroup = props => {
 
 const mapStateToProps = state => {
   return {
-    checkboxes: state.stops.checkboxes,
+    checkboxes: state.stops,
     sortBy: state.fastesOrCheaper.sortBy,
     currentCurrency: state.currency.currentCurrency,
     tickets: state.tickets,
