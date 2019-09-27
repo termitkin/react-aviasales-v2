@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "faea4ea4b3a5ed3dbcd7fdbb67dd0133",
+    "revision": "96a67f77dc8369790ca6730e3e1cf9d6",
     "url": "/react-aviasales-v2/index.html"
   },
   {
-    "revision": "1eca5b69a745f430fe4c",
+    "revision": "52c82e37d342bc79ea02",
     "url": "/react-aviasales-v2/static/css/main.5c4de5b5.chunk.css"
   },
   {
-    "revision": "2fcdf507c7ad80a5c59a",
-    "url": "/react-aviasales-v2/static/js/2.7012c54e.chunk.js"
+    "revision": "7f742376cb03982e55da",
+    "url": "/react-aviasales-v2/static/js/2.142e934e.chunk.js"
   },
   {
-    "revision": "1eca5b69a745f430fe4c",
-    "url": "/react-aviasales-v2/static/js/main.802d2bab.chunk.js"
+    "revision": "52c82e37d342bc79ea02",
+    "url": "/react-aviasales-v2/static/js/main.620bd949.chunk.js"
   },
   {
     "revision": "1bdf8e95bced45922c4e",
