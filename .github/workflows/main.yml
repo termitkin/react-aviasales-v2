@@ -7,6 +7,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm run test:nowatch
+
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@master
         env:
@@ -14,4 +20,4 @@ jobs:
           BASE_BRANCH: master # The branch the action should deploy from.
           BRANCH: gh-pages # The branch the action should deploy to.
           FOLDER: build # The folder the action should deploy.
-          BUILD_SCRIPT: npm install && npm run-script build # The build script the action should run prior to deploying.
+          BUILD_SCRIPT: npm run-script build # The build script the action should run prior to deploying.
