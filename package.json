@@ -18,6 +18,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:nowatch": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "jest": {
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "babel-plugin-emotion": "^10.0.17",
+    "cross-env": "^6.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "jest-emotion": "^10.0.17",
