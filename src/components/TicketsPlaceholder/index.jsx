@@ -13,7 +13,7 @@ const StyledPlaceholder = styled.div`
 `;
 
 const StyledText = styled.span`
-  font-size; 16px;
+  font-size: 16px;
   color: #333;
   font-family: sans-serif;
   font-weight: bold;
