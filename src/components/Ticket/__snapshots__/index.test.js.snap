@@ -258,8 +258,7 @@ exports[`Ticket component Matches the snapshot 1`] = `
         className="emotion-4 emotion-5"
       >
         <source
-          media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution:
- 200dpi), screen and ( min-resolution: 1.25dppx)"
+          media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
           srcSet="https://pics.avs.io/99/36/TG@2x.png"
           type="image/png"
         />
@@ -600,8 +599,7 @@ exports[`Ticket component Matches the snapshot 2 1`] = `
         className="emotion-4 emotion-5"
       >
         <source
-          media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution:
- 200dpi), screen and ( min-resolution: 1.25dppx)"
+          media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
           srcSet="https://pics.avs.io/99/36/TG@2x.png"
           type="image/png"
         />
