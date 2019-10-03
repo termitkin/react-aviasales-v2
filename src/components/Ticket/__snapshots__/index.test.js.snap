@@ -594,7 +594,7 @@ exports[`Ticket component Matches the snapshot 2 1`] = `
       <div
         className="emotion-0 emotion-1"
       >
-        500.00 €
+        490.20 €
       </div>
       <picture
         className="emotion-4 emotion-5"

@@ -74,8 +74,8 @@ describe("Ticket component", () => {
           ]}
           currentCurrency={"eur"}
           currencyRates={{
-            eur: 50,
-            usd: 64
+            eur: 51,
+            usd: 63
           }}
         />
       );
