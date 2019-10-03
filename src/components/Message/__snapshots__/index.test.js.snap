@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Message component Matches the snapshot 1`] = `
+.emotion-0 {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  color: #333;
+}
+
+<div
+  className="emotion-0 emotion-1"
+>
+  Some message
+</div>
+`;
