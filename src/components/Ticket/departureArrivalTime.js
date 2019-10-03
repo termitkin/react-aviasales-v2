@@ -1,26 +1,29 @@
 /*
 INPUT: date string, duration int
-OUTPUT: "10:36 – 18:00"
+OUTPUT: "10:36 – 18:00" (Moscow time UTC+3)
 */
 
 export const departureArrivalTime = (dateFromProps, durat) => {
   const date = new Date(dateFromProps);
+  date.setTime(date.getTime() + 3 * 60 * 60 * 1000);
   const datePlusDuration = date.getTime() + durat * 60000;
 
   let departureTimeHours =
-    date.getHours() > 9 ? date.getHours() : `0${date.getHours()}`;
+    date.getUTCHours() > 9 ? date.getUTCHours() : `0${date.getUTCHours()}`;
   let departureTimeMinutes =
-    date.getMinutes() > 9 ? date.getMinutes() : `0${date.getMinutes()}`;
+    date.getUTCMinutes() > 9
+      ? date.getUTCMinutes()
+      : `0${date.getUTCMinutes()}`;
   const departureTime = `${departureTimeHours}:${departureTimeMinutes}`;
 
   let ArrivalTimeHours =
-    new Date(datePlusDuration).getHours() > 9
-      ? new Date(datePlusDuration).getHours()
-      : `0${new Date(datePlusDuration).getHours()}`;
+    new Date(datePlusDuration).getUTCHours() > 9
+      ? new Date(datePlusDuration).getUTCHours()
+      : `0${new Date(datePlusDuration).getUTCHours()}`;
   let ArrivalTimeMinutes =
-    new Date(datePlusDuration).getMinutes() > 9
-      ? new Date(datePlusDuration).getMinutes()
-      : `0${new Date(datePlusDuration).getMinutes()}`;
+    new Date(datePlusDuration).getUTCMinutes() > 9
+      ? new Date(datePlusDuration).getUTCMinutes()
+      : `0${new Date(datePlusDuration).getUTCMinutes()}`;
   const ArrivalTime = `${ArrivalTimeHours}:${ArrivalTimeMinutes}`;
 
   const result = `${departureTime} – ${ArrivalTime}`;
