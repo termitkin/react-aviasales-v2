@@ -36,7 +36,7 @@ const StyledControlsWrap = styled.fieldset`
 const StyledTitle = styled.legend`
   font-family: Open Sans, sans-serif;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 19px;
   letter-spacing: 0.5px;
   color: #4a4a4a;

@@ -11,7 +11,7 @@ const StyledLabel = styled.label`
   cursor: pointer;
   font-family: Open Sans, sans-serif;
   font-weight: normal;
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 35px;
   color: #4a4a4a;
 
@@ -56,7 +56,7 @@ export const StyledOnlyButton = styled.button`
   margin-left: auto;
   font-family: Open Sans, sans-serif;
   font-weight: 600;
-  font-size: 11px;
+  font-size: 0.6875rem;
   line-height: 35px;
   letter-spacing: 0.5px;
   color: #2196f3;

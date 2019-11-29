@@ -20,7 +20,7 @@ export const Tab = props => {
     font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 0.5px;
     text-transform: uppercase;
     border-radius: ${props.borderRadius || "0 0 0 0"};

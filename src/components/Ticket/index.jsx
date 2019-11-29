@@ -10,7 +10,6 @@ import "./style.css";
 
 const StyledTicket = styled.div`
   width: 100%;
-
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
   padding: 5px;
@@ -28,7 +27,6 @@ const StyledTicket = styled.div`
 
   @media ${device.desktop} {
     width: 100%;
-
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
     padding: 20px;
@@ -115,8 +113,8 @@ const StyledPrice = styled.div`
   font-family: Open Sans;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
   color: #2196f3;
 
   @media ${device.desktop} {
@@ -140,18 +138,18 @@ const StyledContentWrap = styled.div`
 `;
 
 const StyledMeta = styled(StyledContentWrap)`
-  font-size: 12px;
+  font-size: 0.75rem;
   height: 18px;
   color: #a0b0b9;
 `;
 
 const StyledContent = styled(StyledContentWrap)`
-  font-size: 13px;
+  font-size: 0.8125rem;
   height: 21px;
   color: #4a4a4a;
 
   @media ${device.desktop} {
-    font-size: 14px;
+    font-size: 0.875rem;
     height: 21px;
     color: #4a4a4a;
   }

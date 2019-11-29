@@ -16,7 +16,7 @@ const CurrencyButton = props => {
     color: ${props.currency === props.currentCurrency ? "#fff" : "#2196f3"};
     font-family: Open Sans, sans-serif;
     font-weight: 600;
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 22px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
