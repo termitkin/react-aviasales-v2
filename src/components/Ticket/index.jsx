@@ -37,7 +37,7 @@ const StyledTicket = styled.div`
 `;
 
 const StyledShadow = styled.div`
-  position: relative;
+  position: rticketative;
   z-index: 0;
   box-shadow: 0px 1px 4px rgba(91, 137, 164, 0.25);
   border-radius: 5px;
@@ -170,15 +170,15 @@ const StyledSegment = styled.div`
 `;
 
 const Ticket = props => {
-  const ticket = props.ticket.map(el => {
+  return props.ticket.map(ticket => {
     return (
       <StyledShadow
         key={
-          el.carrier +
-          el.price +
-          el.segments[0].origin +
-          el.segments[0].duration +
-          el.segments[1].duration
+          ticket.carrier +
+          ticket.price +
+          ticket.segments[0].origin +
+          ticket.segments[0].duration +
+          ticket.segments[1].duration
         }
         tabIndex="0"
       >
@@ -186,60 +186,62 @@ const Ticket = props => {
           <StyledPriceAndLogo>
             <StyledPrice>
               {priceConverter(
-                el.price,
+                ticket.price,
                 props.currentCurrency,
                 props.currencyRates
               )}
             </StyledPrice>
             <StyledLogoWrap>
               <source
-                srcSet={`https://pics.avs.io/99/36/${el.carrier}@2x.png`}
+                srcSet={`https://pics.avs.io/99/36/${ticket.carrier}@2x.png`}
                 type="image/png"
-                media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
+                media="screen and (-webkit-min-device-pixticket-ratio: 1.25), screen and ( min--moz-device-pixticket-ratio: 1.25), screen and (-o-min-device-pixticket-ratio: 1.25/1), screen and (min-device-pixticket-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
               ></source>
               <StyledLogo
-                src={`https://pics.avs.io/99/36/${el.carrier}.png`}
+                src={`https://pics.avs.io/99/36/${ticket.carrier}.png`}
                 alt="Логотип авиакомпании"
               />
             </StyledLogoWrap>
           </StyledPriceAndLogo>
 
           <StyledSegment>
-            <StyledMeta>{`${el.segments[0].origin} – ${el.segments[0].destination}`}</StyledMeta>
+            <StyledMeta>{`${ticket.segments[0].origin} – ${ticket.segments[0].destination}`}</StyledMeta>
             <StyledContent>
               {departureArrivalTime(
-                el.segments[0].date,
-                el.segments[0].duration
+                ticket.segments[0].date,
+                ticket.segments[0].duration
               )}
             </StyledContent>
             <StyledMeta>В пути</StyledMeta>
-            <StyledContent>{duration(el.segments[0].duration)}</StyledContent>
-            <StyledMeta>{stopsText(el.segments[0].stops)}</StyledMeta>
             <StyledContent>
-              {[...el.segments[0].stops].join(", ")}
+              {duration(ticket.segments[0].duration)}
+            </StyledContent>
+            <StyledMeta>{stopsText(ticket.segments[0].stops)}</StyledMeta>
+            <StyledContent>
+              {[...ticket.segments[0].stops].join(", ")}
             </StyledContent>
           </StyledSegment>
           <StyledSegment>
-            <StyledMeta>{`${el.segments[1].origin} – ${el.segments[1].destination}`}</StyledMeta>
+            <StyledMeta>{`${ticket.segments[1].origin} – ${ticket.segments[1].destination}`}</StyledMeta>
             <StyledContent>
               {departureArrivalTime(
-                el.segments[1].date,
-                el.segments[1].duration
+                ticket.segments[1].date,
+                ticket.segments[1].duration
               )}
             </StyledContent>
             <StyledMeta>В пути</StyledMeta>
-            <StyledContent>{duration(el.segments[1].duration)}</StyledContent>
-            <StyledMeta>{stopsText(el.segments[1].stops)}</StyledMeta>
             <StyledContent>
-              {[...el.segments[1].stops].join(", ")}
+              {duration(ticket.segments[1].duration)}
+            </StyledContent>
+            <StyledMeta>{stopsText(ticket.segments[1].stops)}</StyledMeta>
+            <StyledContent>
+              {[...ticket.segments[1].stops].join(", ")}
             </StyledContent>
           </StyledSegment>
         </StyledTicket>
       </StyledShadow>
     );
   });
-
-  return ticket;
 };
 
 export default Ticket;

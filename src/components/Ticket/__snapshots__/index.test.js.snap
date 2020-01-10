@@ -2,7 +2,7 @@
 
 exports[`Ticket component Matches the snapshot 1`] = `
 .emotion-38 {
-  position: relative;
+  position: rticketative;
   z-index: 0;
   box-shadow: 0px 1px 4px rgba(91,137,164,0.25);
   border-radius: 5px;
@@ -258,7 +258,7 @@ exports[`Ticket component Matches the snapshot 1`] = `
         className="emotion-4 emotion-5"
       >
         <source
-          media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
+          media="screen and (-webkit-min-device-pixticket-ratio: 1.25), screen and ( min--moz-device-pixticket-ratio: 1.25), screen and (-o-min-device-pixticket-ratio: 1.25/1), screen and (min-device-pixticket-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
           srcSet="https://pics.avs.io/99/36/TG@2x.png"
           type="image/png"
         />
@@ -343,7 +343,7 @@ exports[`Ticket component Matches the snapshot 1`] = `
 
 exports[`Ticket component Matches the snapshot 2 1`] = `
 .emotion-38 {
-  position: relative;
+  position: rticketative;
   z-index: 0;
   box-shadow: 0px 1px 4px rgba(91,137,164,0.25);
   border-radius: 5px;
@@ -599,7 +599,7 @@ exports[`Ticket component Matches the snapshot 2 1`] = `
         className="emotion-4 emotion-5"
       >
         <source
-          media="screen and (-webkit-min-device-pixel-ratio: 1.25), screen and ( min--moz-device-pixel-ratio: 1.25), screen and (-o-min-device-pixel-ratio: 1.25/1), screen and (min-device-pixel-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
+          media="screen and (-webkit-min-device-pixticket-ratio: 1.25), screen and ( min--moz-device-pixticket-ratio: 1.25), screen and (-o-min-device-pixticket-ratio: 1.25/1), screen and (min-device-pixticket-ratio: 1.25), screen and ( min-resolution: 200dpi), screen and ( min-resolution: 1.25dppx)"
           srcSet="https://pics.avs.io/99/36/TG@2x.png"
           type="image/png"
         />

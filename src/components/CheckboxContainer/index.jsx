@@ -5,25 +5,22 @@ import { changeStops } from "../../store/stops/actions";
 import { connect } from "react-redux";
 
 const CheckboxGroup = props => {
-  const checkboxesArr = [];
-
-  for (let i in props.stops) {
-    checkboxesArr.push(props.stops[i]);
-  }
-
-  const checkboxes = checkboxesArr.map(el => {
-    return (
-      <Checkbox
-        key={el.id}
-        id={el.id}
-        labelText={el.labelText}
-        stops={el.stops}
-        isEnabled={el.isEnabled}
-        changeStops={props.changeStops}
-      />
-    );
-  });
-  return <div>{checkboxes}</div>;
+  return (
+    <div>
+      {Object.values(props.stops).map(checkbox => {
+        return (
+          <Checkbox
+            key={checkbox.id}
+            id={checkbox.id}
+            labelText={checkbox.labelText}
+            stops={checkbox.stops}
+            isEnabled={checkbox.isEnabled}
+            changeStops={props.changeStops}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 const mapStateToProps = state => {
