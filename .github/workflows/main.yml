@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@master
+        uses: actions/checkout@v1
 
       - name: Install Dependencies
         run: npm install
@@ -13,11 +13,12 @@ jobs:
       - name: Run Tests
         run: npm run test:nowatch
 
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@master
-        env:
+      - name: Build
+        run: npm run build
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
           ACCESS_TOKEN: ${{ secrets.my_secret_token }}
-          BASE_BRANCH: master
           BRANCH: gh-pages
           FOLDER: build
-          BUILD_SCRIPT: npm run-script build
